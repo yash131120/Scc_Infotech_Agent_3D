@@ -39,8 +39,8 @@ const Floating3DPhone = ({ position, rotation, texture, isActive }: any) => {
           smoothness={4}
         >
           <meshStandardMaterial
-            color={isActive ? "#12A594" : "#333333"}
-            emissive={isActive ? "#12A594" : "#000000"}
+            color={isActive ? "#0d8be0" : "#333333"}
+            emissive={isActive ? "#0d8be0" : "#000000"}
             emissiveIntensity={isActive ? 0.2 : 0}
           />
         </RoundedBox>
@@ -58,7 +58,7 @@ const Portfolio3DCarousel = ({
     <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <pointLight position={[-10, 0, 5]} intensity={0.5} color="#12A594" />
+      <pointLight position={[-10, 0, 5]} intensity={0.5} color="#0d8be0" />
 
       {projects.map((project: any, index: number) => {
         const angle = (index / projects.length) * Math.PI * 2;
@@ -102,7 +102,7 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
       <div
         className={`backdrop-blur-md rounded-3xl overflow-hidden border transition-all duration-500 ${
           isActive
-            ? "bg-white/15 border-[#12A594] shadow-2xl shadow-[#12A594]/25"
+            ? "bg-white/15 border-[#0d8be0] shadow-2xl shadow-[#0d8be0]/25"
             : "bg-white/5 border-white/10 hover:bg-white/10"
         }`}
       >
@@ -110,12 +110,12 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
         <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
           <div
             className={`w-32 h-32 rounded-2xl flex items-center justify-center transition-all duration-300 ${
-              isActive ? "bg-[#12A594] shadow-lg" : "bg-white/10"
+              isActive ? "bg-[#0d8be0] shadow-lg" : "bg-white/10"
             }`}
           >
             <IconComponent
               className={`w-16 h-16 ${
-                isActive ? "text-white" : "text-[#12A594]"
+                isActive ? "text-white" : "text-[#0d8be0]"
               }`}
             />
           </div>
@@ -127,8 +127,8 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
             <span
               className={`px-3 py-1 rounded-full text-xs font-semibold ${
                 isActive
-                  ? "bg-[#12A594] text-white"
-                  : "bg-white/10 text-[#12A594]"
+                  ? "bg-[#0d8be0] text-white"
+                  : "bg-white/10 text-[#0d8be0]"
               }`}
             >
               {project.category}
@@ -160,7 +160,7 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-[#12A594] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#0f8a7a] transition-colors"
+              className="flex items-center gap-2 bg-[#0d8be0] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#0f8a7a] transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
               View Project
@@ -286,7 +286,7 @@ const Portfolio: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Our <span className="text-[#12A594]">Portfolio</span>
+            Our <span className="text-[#0d8be0]">Portfolio</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Showcasing innovative solutions that have transformed businesses
@@ -303,7 +303,7 @@ const Portfolio: React.FC = () => {
                 onClick={() => setActiveProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   activeProject === index
-                    ? "bg-[#12A594] scale-125"
+                    ? "bg-[#0d8be0] scale-125"
                     : "bg-white/30 hover:bg-white/50"
                 }`}
               />
@@ -336,17 +336,17 @@ const Portfolio: React.FC = () => {
               onClick={() => setActiveProject(index)}
               className={`cursor-pointer backdrop-blur-md rounded-xl p-6 border transition-all duration-300 hover:scale-105 ${
                 activeProject === index
-                  ? "bg-[#12A594]/20 border-[#12A594]"
+                  ? "bg-[#0d8be0]/20 border-[#0d8be0]"
                   : "bg-white/5 border-white/10 hover:bg-white/10"
               }`}
             >
               <div className="flex items-center gap-3 mb-3">
                 {project.type === "mobile" ? (
-                  <Smartphone className="w-5 h-5 text-[#12A594]" />
+                  <Smartphone className="w-5 h-5 text-[#0d8be0]" />
                 ) : project.type === "web" ? (
-                  <Monitor className="w-5 h-5 text-[#12A594]" />
+                  <Monitor className="w-5 h-5 text-[#0d8be0]" />
                 ) : (
-                  <Gamepad className="w-5 h-5 text-[#12A594]" />
+                  <Gamepad className="w-5 h-5 text-[#0d8be0]" />
                 )}
                 <span className="font-semibold text-white">
                   {project.title}

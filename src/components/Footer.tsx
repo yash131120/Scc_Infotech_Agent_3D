@@ -40,7 +40,7 @@ const AnimatedGrid = () => {
     <Points ref={pointsRef} positions={points} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#12A594"
+        color="#0d8be0"
         size={0.05}
         sizeAttenuation={true}
         depthWrite={false}
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="absolute top-8 right-8 z-20 w-12 h-12 bg-[#12A594] rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:shadow-[#12A594]/25 transition-all duration-300"
+        className="absolute top-8 right-8 z-20 w-12 h-12 bg-[#0d8be0] rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:shadow-[#0d8be0]/25 transition-all duration-300"
       >
         <ArrowUp className="w-6 h-6 text-white" />
       </motion.button>
@@ -169,7 +169,7 @@ const Footer: React.FC = () => {
             >
               <div className="mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">
-                  <span className="text-[#12A594]">SCC</span> INFOTECH
+                  <span className="text-[#0d8be0]">SCC</span> INFOTECH
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Innovating mobile and web solutions worldwide. We transform
@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-3 text-gray-300 hover:text-[#12A594] transition-colors duration-300"
+                    className="flex items-center gap-3 text-gray-300 hover:text-[#0d8be0] transition-colors duration-300"
                   >
                     <info.icon className="w-5 h-5" />
                     <span>{info.text}</span>
@@ -208,7 +208,7 @@ const Footer: React.FC = () => {
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#12A594] transition-all duration-300"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0d8be0] transition-all duration-300"
                   >
                     <social.icon className="w-5 h-5 text-white" />
                   </motion.a>
@@ -240,7 +240,7 @@ const Footer: React.FC = () => {
                       >
                         <a
                           href={link.href}
-                          className="text-gray-400 hover:text-[#12A594] transition-colors duration-300 text-sm"
+                          className="text-gray-400 hover:text-[#0d8be0] transition-colors duration-300 text-sm"
                         >
                           {link.name}
                         </a>
@@ -262,8 +262,8 @@ const Footer: React.FC = () => {
           >
             {stats.map((stat, index) => (
               <div key={stat.label} className="text-center">
-                <div className="w-16 h-16 bg-[#12A594]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-[#12A594]" />
+                <div className="w-16 h-16 bg-[#0d8be0]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-[#0d8be0]" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">
                   {stat.value}
@@ -290,12 +290,12 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#12A594] focus:ring-2 focus:ring-[#12A594]/20 transition-all duration-300"
+                className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-[#0d8be0] focus:ring-2 focus:ring-[#0d8be0]/20 transition-all duration-300"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#12A594] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#0f8a7a] transition-colors duration-300"
+                className="bg-[#0d8be0] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#0f8a7a] transition-colors duration-300"
               >
                 Subscribe
               </motion.button>
@@ -311,14 +311,14 @@ const Footer: React.FC = () => {
                 © 2024 SCC INFOTECH. All rights reserved. |
                 <a
                   href="#"
-                  className="hover:text-[#12A594] transition-colors duration-300 ml-1"
+                  className="hover:text-[#0d8be0] transition-colors duration-300 ml-1"
                 >
                   Privacy Policy
                 </a>{" "}
                 |
                 <a
                   href="#"
-                  className="hover:text-[#12A594] transition-colors duration-300 ml-1"
+                  className="hover:text-[#0d8be0] transition-colors duration-300 ml-1"
                 >
                   Terms of Service
                 </a>

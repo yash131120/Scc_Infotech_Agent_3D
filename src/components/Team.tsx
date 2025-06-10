@@ -27,8 +27,8 @@ const TeamMember3D = ({ position, isActive, onClick }: any) => {
         {/* Avatar Frame */}
         <RoundedBox args={[1.5, 1.5, 0.2]} radius={0.3} smoothness={4}>
           <meshStandardMaterial
-            color={isActive ? "#12A594" : "#374151"}
-            emissive={isActive ? "#12A594" : "#000000"}
+            color={isActive ? "#0d8be0" : "#374151"}
+            emissive={isActive ? "#0d8be0" : "#000000"}
             emissiveIntensity={isActive ? 0.2 : 0}
           />
         </RoundedBox>
@@ -75,7 +75,7 @@ const TeamCard = ({ member, index, isActive, onClick }: any) => {
         <div
           className={`backdrop-blur-md rounded-3xl p-8 border transition-all duration-500 ${
             isActive
-              ? "bg-[#12A594]/20 border-[#12A594] shadow-2xl shadow-[#12A594]/25"
+              ? "bg-[#0d8be0]/20 border-[#0d8be0] shadow-2xl shadow-[#0d8be0]/25"
               : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
           }`}
         >
@@ -84,7 +84,7 @@ const TeamCard = ({ member, index, isActive, onClick }: any) => {
             <div
               className={`w-24 h-24 mx-auto rounded-full flex items-center justify-center transition-all duration-300 ${
                 isActive
-                  ? "bg-[#12A594] ring-4 ring-[#12A594]/30"
+                  ? "bg-[#0d8be0] ring-4 ring-[#0d8be0]/30"
                   : "bg-white/10"
               }`}
             >
@@ -109,7 +109,7 @@ const TeamCard = ({ member, index, isActive, onClick }: any) => {
           {/* Info */}
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-            <p className="text-[#12A594] font-semibold mb-3">{member.role}</p>
+            <p className="text-[#0d8be0] font-semibold mb-3">{member.role}</p>
             <p className="text-gray-300 text-sm leading-relaxed">
               {member.bio}
             </p>
@@ -165,7 +165,7 @@ const TeamCard = ({ member, index, isActive, onClick }: any) => {
               whileHover={{ scale: 1.2, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
               href={`mailto:${member.email}`}
-              className="w-10 h-10 bg-[#12A594] rounded-full flex items-center justify-center hover:bg-[#0f8a7a] transition-colors"
+              className="w-10 h-10 bg-[#0d8be0] rounded-full flex items-center justify-center hover:bg-[#0f8a7a] transition-colors"
             >
               <Mail className="w-5 h-5 text-white" />
             </motion.a>
@@ -273,7 +273,7 @@ const Team: React.FC = () => {
         <Canvas camera={{ position: [0, 0, 10], fov: 60 }}>
           <ambientLight intensity={0.6} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <pointLight position={[-10, 0, 5]} intensity={0.5} color="#12A594" />
+          <pointLight position={[-10, 0, 5]} intensity={0.5} color="#0d8be0" />
 
           {teamMembers.map((member, index) => {
             const angle = (index / teamMembers.length) * Math.PI * 2;
@@ -302,7 +302,7 @@ const Team: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Meet Our <span className="text-[#12A594]">Team</span>
+            Meet Our <span className="text-[#0d8be0]">Team</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Passionate professionals dedicated to delivering exceptional results
@@ -340,7 +340,7 @@ const Team: React.FC = () => {
               key={stat.label}
               className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10"
             >
-              <div className="text-3xl font-bold text-[#12A594] mb-2">
+              <div className="text-3xl font-bold text-[#0d8be0] mb-2">
                 {stat.value}
               </div>
               <div className="text-gray-300 text-sm">{stat.label}</div>

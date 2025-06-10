@@ -22,7 +22,7 @@ const FloatingLogo = () => {
       <mesh ref={meshRef} scale={1.2}>
         <boxGeometry args={[2, 0.4, 2]} />
         <MeshDistortMaterial
-          color="#12A594"
+          color="#0d8be0"
           attach="material"
           distort={0.3}
           speed={1.5}
@@ -46,7 +46,7 @@ const AnimatedGlobe = () => {
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
       <Sphere ref={sphereRef} args={[1, 32, 32]} position={[3, 0, 0]}>
         <MeshDistortMaterial
-          color="#12A594"
+          color="#0d8be0"
           attach="material"
           distort={0.1}
           speed={2}
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
         <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
           {/* <ambientLight intensity={0.6} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#12A594" /> */}
+          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#0d8be0" /> */}
 
           <Stars
             radius={300}
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
           className="space-y-8"
         >
           <h1 className="hero-title text-6xl md:text-8xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-[#12A594] to-teal-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#0d8be0] to-teal-300 bg-clip-text text-transparent">
               SCC INFOTECH
             </span>
           </h1>
@@ -149,21 +149,21 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm md:text-base">
             <div className="flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-[#12A594]" />
+              <Smartphone className="w-5 h-5 text-[#0d8be0]" />
               Mobile Development
             </div>
             <div className="flex items-center gap-2">
-              <Code className="w-5 h-5 text-[#12A594]" />
+              <Code className="w-5 h-5 text-[#0d8be0]" />
               Web Solutions
             </div>
             <div className="flex items-center gap-2">
-              <Globe className="w-5 h-5 text-[#12A594]" />
+              <Globe className="w-5 h-5 text-[#0d8be0]" />
               Global Reach
             </div>
           </div>
 
           <motion.button
-            className="hero-cta inline-flex items-center gap-3 bg-gradient-to-r from-[#12A594] to-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-[#12A594]/25 transition-all duration-300 transform hover:scale-105"
+            className="hero-cta inline-flex items-center gap-3 bg-gradient-to-r from-[#0d8be0] to-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-[#0d8be0]/25 transition-all duration-300 transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

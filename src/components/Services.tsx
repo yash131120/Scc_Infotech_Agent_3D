@@ -51,10 +51,10 @@ const ServiceCube = ({
         onClick={onClick}
       >
         <meshStandardMaterial
-          color={isActive ? "#12A594" : color}
+          color={isActive ? "#0d8be0" : color}
           transparent
           opacity={isActive ? 0.9 : 0.7}
-          emissive={isActive ? "#12A594" : "#000000"}
+          emissive={isActive ? "#0d8be0" : "#000000"}
           emissiveIntensity={isActive ? 0.3 : 0}
         />
       </RoundedBox>
@@ -87,19 +87,19 @@ const ServiceCard = ({ service, index, isActive, onClick }: any) => {
       <div
         className={`backdrop-blur-md rounded-2xl p-8 border transition-all duration-300 ${
           isActive
-            ? "bg-[#12A594]/20 border-[#12A594] shadow-2xl shadow-[#12A594]/25"
+            ? "bg-[#0d8be0]/20 border-[#0d8be0] shadow-2xl shadow-[#0d8be0]/25"
             : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
         }`}
       >
         <div
           className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
             isActive
-              ? "bg-[#12A594] shadow-lg shadow-[#12A594]/50"
+              ? "bg-[#0d8be0] shadow-lg shadow-[#0d8be0]/50"
               : "bg-white/10"
           }`}
         >
           <service.icon
-            className={`w-8 h-8 ${isActive ? "text-white" : "text-[#12A594]"}`}
+            className={`w-8 h-8 ${isActive ? "text-white" : "text-[#0d8be0]"}`}
           />
         </div>
 
@@ -113,7 +113,7 @@ const ServiceCard = ({ service, index, isActive, onClick }: any) => {
             <div key={idx} className="flex items-center gap-3">
               <div
                 className={`w-2 h-2 rounded-full ${
-                  isActive ? "bg-[#12A594]" : "bg-white/40"
+                  isActive ? "bg-[#0d8be0]" : "bg-white/40"
                 }`}
               ></div>
               <span className="text-gray-300 text-sm">{feature}</span>
@@ -227,7 +227,7 @@ const Services: React.FC = () => {
       <div className="absolute inset-0 z-0 opacity-40">
         <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
           <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#12A594" />
+          <pointLight position={[10, 10, 10]} intensity={1} color="#0d8be0" />
           <pointLight
             position={[-10, -10, 10]}
             intensity={0.5}
@@ -261,7 +261,7 @@ const Services: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Our <span className="text-[#12A594]">Services</span>
+            Our <span className="text-[#0d8be0]">Services</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Comprehensive IT solutions tailored to transform your business
@@ -313,7 +313,7 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white hover:bg-[#12A594]/20 hover:border-[#12A594] transition-all duration-300"
+                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white hover:bg-[#0d8be0]/20 hover:border-[#0d8be0] transition-all duration-300"
               >
                 {tech}
               </motion.span>

@@ -26,10 +26,10 @@ const FloatingTestimonial3D = ({ position, rotation, isActive }: any) => {
       <group ref={meshRef} position={position} rotation={rotation}>
         <RoundedBox args={[2, 1.2, 0.2]} radius={0.2} smoothness={4}>
           <meshStandardMaterial
-            color={isActive ? "#12A594" : "#374151"}
+            color={isActive ? "#0d8be0" : "#374151"}
             transparent
             opacity={0.8}
-            emissive={isActive ? "#12A594" : "#000000"}
+            emissive={isActive ? "#0d8be0" : "#000000"}
             emissiveIntensity={isActive ? 0.3 : 0}
           />
         </RoundedBox>
@@ -75,7 +75,7 @@ const TestimonialCard = ({ testimonial, isActive }: any) => {
       <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-4 left-4 text-6xl text-[#12A594]">
+          <div className="absolute top-4 left-4 text-6xl text-[#0d8be0]">
             <Quote />
           </div>
         </div>
@@ -91,7 +91,7 @@ const TestimonialCard = ({ testimonial, isActive }: any) => {
 
           {/* Client Info */}
           <div className="flex items-center justify-center gap-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#12A594] to-teal-400 rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#0d8be0] to-teal-400 rounded-full flex items-center justify-center shadow-lg">
               <User className="w-8 h-8 text-white" />
             </div>
 
@@ -99,7 +99,7 @@ const TestimonialCard = ({ testimonial, isActive }: any) => {
               <h4 className="text-xl font-bold text-white mb-1">
                 {testimonial.name}
               </h4>
-              <p className="text-[#12A594] font-semibold mb-1">
+              <p className="text-[#0d8be0] font-semibold mb-1">
                 {testimonial.position}
               </p>
               <p className="text-gray-400 text-sm">{testimonial.company}</p>
@@ -108,7 +108,7 @@ const TestimonialCard = ({ testimonial, isActive }: any) => {
 
           {/* Project Details */}
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <span className="bg-[#12A594]/20 text-[#12A594] px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-[#0d8be0]/20 text-[#0d8be0] px-4 py-2 rounded-full text-sm font-semibold">
               {testimonial.projectType}
             </span>
             <span className="bg-white/10 text-gray-300 px-4 py-2 rounded-full text-sm">
@@ -227,7 +227,7 @@ const Testimonials: React.FC = () => {
         <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={0.8} />
-          <pointLight position={[-10, 0, 5]} intensity={0.6} color="#12A594" />
+          <pointLight position={[-10, 0, 5]} intensity={0.6} color="#0d8be0" />
 
           {testimonials.map((_, index) => {
             const angle = (index / testimonials.length) * Math.PI * 2;
@@ -256,7 +256,7 @@ const Testimonials: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Client <span className="text-[#12A594]">Testimonials</span>
+            Client <span className="text-[#0d8be0]">Testimonials</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Hear from our satisfied clients about their success stories and
@@ -280,7 +280,7 @@ const Testimonials: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={prevTestimonial}
-              className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center hover:bg-[#12A594]/20 hover:border-[#12A594] transition-all duration-300"
+              className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center hover:bg-[#0d8be0]/20 hover:border-[#0d8be0] transition-all duration-300"
             >
               <ArrowLeft className="w-6 h-6 text-white" />
             </motion.button>
@@ -291,7 +291,7 @@ const Testimonials: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={nextTestimonial}
-              className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center hover:bg-[#12A594]/20 hover:border-[#12A594] transition-all duration-300"
+              className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center hover:bg-[#0d8be0]/20 hover:border-[#0d8be0] transition-all duration-300"
             >
               <ArrowRight className="w-6 h-6 text-white" />
             </motion.button>
@@ -306,7 +306,7 @@ const Testimonials: React.FC = () => {
               onClick={() => setCurrentTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 currentTestimonial === index
-                  ? "bg-[#12A594] scale-125"
+                  ? "bg-[#0d8be0] scale-125"
                   : "bg-white/30 hover:bg-white/50"
               }`}
             />
@@ -331,7 +331,7 @@ const Testimonials: React.FC = () => {
               key={stat.label}
               className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10"
             >
-              <div className="text-3xl font-bold text-[#12A594] mb-2">
+              <div className="text-3xl font-bold text-[#0d8be0] mb-2">
                 {stat.value}
               </div>
               <div className="text-gray-300 text-sm">{stat.label}</div>

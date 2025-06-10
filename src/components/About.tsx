@@ -15,7 +15,7 @@ const FloatingShape = () => {
       <mesh ref={meshRef}>
         <torusGeometry args={[2, 0.5, 16, 100]} />
         <MeshTransmissionMaterial
-          color="#12A594"
+          color="#0d8be0"
           thickness={0.2}
           roughness={0.1}
           transmission={0.9}
@@ -42,11 +42,11 @@ const TimelineItem = ({ year, title, description, delay }: any) => {
       transition={{ duration: 0.8, delay }}
       className="relative pl-8 pb-8"
     >
-      <div className="absolute left-0 top-0 w-4 h-4 bg-[#12A594] rounded-full shadow-lg shadow-[#12A594]/50"></div>
-      <div className="absolute left-2 top-4 w-0.5 h-full bg-gradient-to-b from-[#12A594] to-transparent"></div>
+      <div className="absolute left-0 top-0 w-4 h-4 bg-[#0d8be0] rounded-full shadow-lg shadow-[#0d8be0]/50"></div>
+      <div className="absolute left-2 top-4 w-0.5 h-full bg-gradient-to-b from-[#0d8be0] to-transparent"></div>
 
       <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-        <div className="text-[#12A594] font-bold text-lg mb-2">{year}</div>
+        <div className="text-[#0d8be0] font-bold text-lg mb-2">{year}</div>
         <h3 className="text-white text-xl font-semibold mb-3">{title}</h3>
         <p className="text-gray-300 leading-relaxed">{description}</p>
       </div>
@@ -122,7 +122,7 @@ const About: React.FC = () => {
       <div className="absolute inset-0 z-0 opacity-30">
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={0.8} color="#12A594" />
+          <pointLight position={[10, 10, 10]} intensity={0.8} color="#0d8be0" />
           <FloatingShape />
         </Canvas>
       </div>
@@ -138,7 +138,7 @@ const About: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="about-title text-5xl md:text-6xl font-bold text-white mb-6">
-                About <span className="text-[#12A594]">Us</span>
+                About <span className="text-[#0d8be0]">Us</span>
               </h2>
 
               <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
@@ -170,7 +170,7 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                   className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  <stat.icon className="w-8 h-8 text-[#12A594] mx-auto mb-3" />
+                  <stat.icon className="w-8 h-8 text-[#0d8be0] mx-auto mb-3" />
                   <div className="text-2xl font-bold text-white mb-1">
                     {stat.value}
                   </div>
