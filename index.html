@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/img/scc.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SCC INFOTECH - Innovating Mobile & Web Solutions Worldwide</title>
+    <title>SCC INFOTECH</title>
     <meta name="description" content="SCC INFOTECH specializes in affordable custom mobile development and IT solutions for clients worldwide. We believe in innovation, creativity, and excellence." />
     <meta name="keywords" content="mobile app development, web development, IT solutions, Surat, India, iOS, Android, game development" />
     
@@ -66,6 +66,13 @@
         transition: opacity 0.5s ease-out;
       }
       
+      .loading-logo-img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 1rem;
+        animation: spin 3s linear infinite;
+      }
+      
       .loading-logo {
         font-size: 2rem;
         font-weight: 800;
@@ -121,8 +128,9 @@
   <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
-      <div class="loading-logo">SCC INFOTECH</div>
-      <div class="loading-spinner"></div>
+      <img src="/src/img/scc.png" alt="SCC Logo" class="loading-logo-img" />
+      <!-- <div class="loading-logo">SCC INFOTECH</div>
+      <div class="loading-spinner"></div> -->
     </div>
     
     <div id="root"></div>

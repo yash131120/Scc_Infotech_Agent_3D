@@ -104,14 +104,14 @@ const Hero: React.FC = () => {
       {/* 3D Canvas */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-          <ambientLight intensity={0.6} />
+          {/* <ambientLight intensity={0.6} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#12A594" />
+          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#12A594" /> */}
           
           <Stars radius={300} depth={60} count={3000} factor={7} saturation={0} fade />
-          <FloatingLogo />
-          <AnimatedGlobe />
-          <FloatingDevices />
+          {/* <FloatingLogo /> */}
+          {/* <AnimatedGlobe /> */}
+          {/* <FloatingDevices /> */}
         </Canvas>
       </div>
 
