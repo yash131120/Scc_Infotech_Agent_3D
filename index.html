@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCC INFOTECH - Innovating Mobile & Web Solutions Worldwide</title>
+    <meta name="description" content="SCC INFOTECH specializes in affordable custom mobile development and IT solutions for clients worldwide. We believe in innovation, creativity, and excellence." />
+    <meta name="keywords" content="mobile app development, web development, IT solutions, Surat, India, iOS, Android, game development" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.sccinfotech.com/" />
+    <meta property="og:title" content="SCC INFOTECH - Innovating Mobile & Web Solutions Worldwide" />
+    <meta property="og:description" content="Transform your ideas into powerful digital experiences with our cutting-edge mobile and web development services." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://www.sccinfotech.com/" />
+    <meta property="twitter:title" content="SCC INFOTECH - Innovating Mobile & Web Solutions Worldwide" />
+    <meta property="twitter:description" content="Transform your ideas into powerful digital experiences with our cutting-edge mobile and web development services." />
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Additional meta tags for better SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="SCC INFOTECH" />
+    <meta name="theme-color" content="#12A594" />
+    
+    <style>
+      /* Remove default margins and set base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+        color: white;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+      
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-logo {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #12A594;
+        margin-bottom: 2rem;
+        animation: pulse 2s infinite;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(18, 165, 148, 0.3);
+        border-top: 3px solid #12A594;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #12A594;
+        border-radius: 4px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0f8a7a;
+      }
+      
+      /* Prevent flash of unstyled content */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-logo">SCC INFOTECH</div>
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+      // Hide loading screen after page loads
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        setTimeout(() => {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }, 1000);
+      });
+      
+      // Add error handling
+      window.addEventListener('error', function(e) {
+        console.error('Application error:', e.error);
+      });
+    </script>
+  </body>
+</html>
