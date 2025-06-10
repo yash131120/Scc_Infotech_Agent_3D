@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { RoundedBox, Float, Text } from '@react-three/drei';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Quote, ArrowLeft, ArrowRight, User } from 'lucide-react';
-import * as THREE from 'three';
+import React, { useRef, useState, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { RoundedBox, Float, Text } from "@react-three/drei";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote, ArrowLeft, ArrowRight, User } from "lucide-react";
+import * as THREE from "three";
 
 const FloatingTestimonial3D = ({ position, rotation, isActive }: any) => {
   const meshRef = useRef<THREE.Group>();
@@ -12,7 +12,8 @@ const FloatingTestimonial3D = ({ position, rotation, isActive }: any) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.005;
       if (isActive) {
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.1;
+        meshRef.current.position.y =
+          position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.1;
         meshRef.current.scale.setScalar(1.2);
       } else {
         meshRef.current.scale.setScalar(1);
@@ -24,11 +25,11 @@ const FloatingTestimonial3D = ({ position, rotation, isActive }: any) => {
     <Float speed={1.8} rotationIntensity={0.4} floatIntensity={1.2}>
       <group ref={meshRef} position={position} rotation={rotation}>
         <RoundedBox args={[2, 1.2, 0.2]} radius={0.2} smoothness={4}>
-          <meshStandardMaterial 
-            color={isActive ? '#12A594' : '#374151'} 
+          <meshStandardMaterial
+            color={isActive ? "#12A594" : "#374151"}
             transparent
             opacity={0.8}
-            emissive={isActive ? '#12A594' : '#000000'}
+            emissive={isActive ? "#12A594" : "#000000"}
             emissiveIntensity={isActive ? 0.3 : 0}
           />
         </RoundedBox>
@@ -54,7 +55,7 @@ const StarRating = ({ rating }: { rating: number }) => {
         <Star
           key={index}
           className={`w-5 h-5 ${
-            index < rating ? 'text-yellow-500 fill-current' : 'text-gray-400'
+            index < rating ? "text-yellow-500 fill-current" : "text-gray-400"
           }`}
         />
       ))}
@@ -93,10 +94,14 @@ const TestimonialCard = ({ testimonial, isActive }: any) => {
             <div className="w-16 h-16 bg-gradient-to-br from-[#12A594] to-teal-400 rounded-full flex items-center justify-center shadow-lg">
               <User className="w-8 h-8 text-white" />
             </div>
-            
+
             <div className="text-center">
-              <h4 className="text-xl font-bold text-white mb-1">{testimonial.name}</h4>
-              <p className="text-[#12A594] font-semibold mb-1">{testimonial.position}</p>
+              <h4 className="text-xl font-bold text-white mb-1">
+                {testimonial.name}
+              </h4>
+              <p className="text-[#12A594] font-semibold mb-1">
+                {testimonial.position}
+              </p>
               <p className="text-gray-400 text-sm">{testimonial.company}</p>
             </div>
           </div>
@@ -125,70 +130,76 @@ const Testimonials: React.FC = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      position: 'CEO',
-      company: 'TechStart Inc.',
-      location: 'San Francisco, USA',
+      name: "Sarah Johnson",
+      position: "CEO",
+      company: "TechStart Inc.",
+      location: "San Francisco, USA",
       rating: 5,
-      content: 'SCC Infotech delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and commitment to quality is unmatched. The app has significantly boosted our user engagement and business growth.',
-      projectType: 'Mobile App Development',
-      duration: '4 months'
+      content:
+        "SCC Infotech delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and commitment to quality is unmatched. The app has significantly boosted our user engagement and business growth.",
+      projectType: "Mobile App Development",
+      duration: "4 months",
     },
     {
       id: 2,
-      name: 'Michael Chen',
-      position: 'CTO',
-      company: 'InnovateLabs',
-      location: 'Toronto, Canada',
+      name: "Michael Chen",
+      position: "CTO",
+      company: "InnovateLabs",
+      location: "Toronto, Canada",
       rating: 5,
-      content: 'Working with SCC Infotech was a game-changer for our business. They transformed our outdated system into a modern, efficient web platform. Their technical expertise and project management skills are outstanding.',
-      projectType: 'Web Development',
-      duration: '6 months'
+      content:
+        "Working with SCC Infotech was a game-changer for our business. They transformed our outdated system into a modern, efficient web platform. Their technical expertise and project management skills are outstanding.",
+      projectType: "Web Development",
+      duration: "6 months",
     },
     {
       id: 3,
-      name: 'Emma Rodriguez',
-      position: 'Marketing Director',
-      company: 'GrowthCorp',
-      location: 'London, UK',
+      name: "Emma Rodriguez",
+      position: "Marketing Director",
+      company: "GrowthCorp",
+      location: "London, UK",
       rating: 5,
-      content: 'The team at SCC Infotech created a stunning e-commerce platform that has tripled our online sales. Their understanding of user experience and conversion optimization is remarkable. Highly recommended!',
-      projectType: 'E-commerce Solution',
-      duration: '5 months'
+      content:
+        "The team at SCC Infotech created a stunning e-commerce platform that has tripled our online sales. Their understanding of user experience and conversion optimization is remarkable. Highly recommended!",
+      projectType: "E-commerce Solution",
+      duration: "5 months",
     },
     {
       id: 4,
-      name: 'David Park',
-      position: 'Founder',
-      company: 'GameStudio Pro',
-      location: 'Seoul, South Korea',
+      name: "David Park",
+      position: "Founder",
+      company: "GameStudio Pro",
+      location: "Seoul, South Korea",
       rating: 5,
-      content: 'SCC Infotech brought our game concept to life with incredible 3D graphics and smooth gameplay. Their Unity expertise and creative problem-solving made our AR game a huge success in the market.',
-      projectType: 'Game Development',
-      duration: '8 months'
+      content:
+        "SCC Infotech brought our game concept to life with incredible 3D graphics and smooth gameplay. Their Unity expertise and creative problem-solving made our AR game a huge success in the market.",
+      projectType: "Game Development",
+      duration: "8 months",
     },
     {
       id: 5,
-      name: 'Lisa Thompson',
-      position: 'Operations Manager',
-      company: 'HealthTech Solutions',
-      location: 'Sydney, Australia',
+      name: "Lisa Thompson",
+      position: "Operations Manager",
+      company: "HealthTech Solutions",
+      location: "Sydney, Australia",
       rating: 5,
-      content: 'The healthcare management system developed by SCC Infotech has revolutionized our operations. The integration with existing systems was seamless, and the user interface is intuitive for our staff.',
-      projectType: 'Healthcare Platform',
-      duration: '7 months'
+      content:
+        "The healthcare management system developed by SCC Infotech has revolutionized our operations. The integration with existing systems was seamless, and the user interface is intuitive for our staff.",
+      projectType: "Healthcare Platform",
+      duration: "7 months",
     },
     {
       id: 6,
-      name: 'Ahmed Hassan',
-      position: 'Business Owner',
-      company: 'RetailHub',
-      location: 'Dubai, UAE',
+      name: "Ahmed Hassan",
+      position: "Business Owner",
+      company: "RetailHub",
+      location: "Dubai, UAE",
       rating: 5,
-      content: 'From concept to deployment, SCC Infotech provided exceptional service. Their digital marketing strategies combined with the beautiful website they created have significantly increased our online presence.',
-      projectType: 'Web + Marketing',
-      duration: '3 months'
-    }
+      content:
+        "From concept to deployment, SCC Infotech provided exceptional service. Their digital marketing strategies combined with the beautiful website they created have significantly increased our online presence.",
+      projectType: "Web + Marketing",
+      duration: "3 months",
+    },
   ];
 
   useEffect(() => {
@@ -204,7 +215,9 @@ const Testimonials: React.FC = () => {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   return (
@@ -246,7 +259,8 @@ const Testimonials: React.FC = () => {
             Client <span className="text-[#12A594]">Testimonials</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Hear from our satisfied clients about their success stories and experiences working with us
+            Hear from our satisfied clients about their success stories and
+            experiences working with us
           </p>
         </motion.div>
 
@@ -291,9 +305,9 @@ const Testimonials: React.FC = () => {
               key={index}
               onClick={() => setCurrentTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentTestimonial === index 
-                  ? 'bg-[#12A594] scale-125' 
-                  : 'bg-white/30 hover:bg-white/50'
+                currentTestimonial === index
+                  ? "bg-[#12A594] scale-125"
+                  : "bg-white/30 hover:bg-white/50"
               }`}
             />
           ))}
@@ -308,13 +322,18 @@ const Testimonials: React.FC = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { label: 'Happy Clients', value: '150+' },
-            { label: 'Success Rate', value: '98%' },
-            { label: 'Average Rating', value: '4.9' },
-            { label: 'Repeat Clients', value: '85%' }
+            { label: "Happy Clients", value: "150+" },
+            { label: "Success Rate", value: "98%" },
+            { label: "Average Rating", value: "4.9" },
+            { label: "Repeat Clients", value: "85%" },
           ].map((stat, index) => (
-            <div key={stat.label} className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10">
-              <div className="text-3xl font-bold text-[#12A594] mb-2">{stat.value}</div>
+            <div
+              key={stat.label}
+              className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10"
+            >
+              <div className="text-3xl font-bold text-[#12A594] mb-2">
+                {stat.value}
+              </div>
               <div className="text-gray-300 text-sm">{stat.label}</div>
             </div>
           ))}

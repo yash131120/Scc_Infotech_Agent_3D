@@ -1,9 +1,15 @@
-import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { RoundedBox, Image, Text, Float } from '@react-three/drei';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Monitor, Gamepad } from 'lucide-react';
-import * as THREE from 'three';
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { RoundedBox, Image, Text, Float } from "@react-three/drei";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  Smartphone,
+  Monitor,
+  Gamepad,
+} from "lucide-react";
+import * as THREE from "three";
 
 const Floating3DPhone = ({ position, rotation, texture, isActive }: any) => {
   const meshRef = useRef<THREE.Group>();
@@ -12,7 +18,8 @@ const Floating3DPhone = ({ position, rotation, texture, isActive }: any) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.005;
       if (isActive) {
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.2;
+        meshRef.current.position.y =
+          position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.2;
       }
     }
   });
@@ -25,10 +32,15 @@ const Floating3DPhone = ({ position, rotation, texture, isActive }: any) => {
           <meshStandardMaterial color="#1a1a1a" />
         </RoundedBox>
         {/* Screen */}
-        <RoundedBox args={[0.8, 1.6, 0.02]} position={[0, 0, 0.06]} radius={0.05} smoothness={4}>
-          <meshStandardMaterial 
-            color={isActive ? '#12A594' : '#333333'} 
-            emissive={isActive ? '#12A594' : '#000000'}
+        <RoundedBox
+          args={[0.8, 1.6, 0.02]}
+          position={[0, 0, 0.06]}
+          radius={0.05}
+          smoothness={4}
+        >
+          <meshStandardMaterial
+            color={isActive ? "#12A594" : "#333333"}
+            emissive={isActive ? "#12A594" : "#000000"}
             emissiveIntensity={isActive ? 0.2 : 0}
           />
         </RoundedBox>
@@ -37,7 +49,11 @@ const Floating3DPhone = ({ position, rotation, texture, isActive }: any) => {
   );
 };
 
-const Portfolio3DCarousel = ({ projects, activeProject, setActiveProject }: any) => {
+const Portfolio3DCarousel = ({
+  projects,
+  activeProject,
+  setActiveProject,
+}: any) => {
   return (
     <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
       <ambientLight intensity={0.6} />
@@ -65,7 +81,12 @@ const Portfolio3DCarousel = ({ projects, activeProject, setActiveProject }: any)
 };
 
 const ProjectCard = ({ project, index, isActive, onClick }: any) => {
-  const IconComponent = project.type === 'mobile' ? Smartphone : project.type === 'web' ? Monitor : Gamepad;
+  const IconComponent =
+    project.type === "mobile"
+      ? Smartphone
+      : project.type === "web"
+      ? Monitor
+      : Gamepad;
 
   return (
     <motion.div
@@ -74,39 +95,53 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
       animate={{ opacity: isActive ? 1 : 0.7, scale: isActive ? 1 : 0.9 }}
       transition={{ duration: 0.5 }}
       className={`cursor-pointer transform transition-all duration-500 ${
-        isActive ? 'z-10' : 'z-0'
+        isActive ? "z-10" : "z-0"
       }`}
       onClick={() => onClick(index)}
     >
-      <div className={`backdrop-blur-md rounded-3xl overflow-hidden border transition-all duration-500 ${
-        isActive 
-          ? 'bg-white/15 border-[#12A594] shadow-2xl shadow-[#12A594]/25' 
-          : 'bg-white/5 border-white/10 hover:bg-white/10'
-      }`}>
+      <div
+        className={`backdrop-blur-md rounded-3xl overflow-hidden border transition-all duration-500 ${
+          isActive
+            ? "bg-white/15 border-[#12A594] shadow-2xl shadow-[#12A594]/25"
+            : "bg-white/5 border-white/10 hover:bg-white/10"
+        }`}
+      >
         {/* Project Image */}
         <div className="relative h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-          <div className={`w-32 h-32 rounded-2xl flex items-center justify-center transition-all duration-300 ${
-            isActive ? 'bg-[#12A594] shadow-lg' : 'bg-white/10'
-          }`}>
-            <IconComponent className={`w-16 h-16 ${isActive ? 'text-white' : 'text-[#12A594]'}`} />
+          <div
+            className={`w-32 h-32 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+              isActive ? "bg-[#12A594] shadow-lg" : "bg-white/10"
+            }`}
+          >
+            <IconComponent
+              className={`w-16 h-16 ${
+                isActive ? "text-white" : "text-[#12A594]"
+              }`}
+            />
           </div>
         </div>
 
         {/* Project Info */}
         <div className="p-8">
           <div className="flex items-center gap-3 mb-4">
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-              isActive 
-                ? 'bg-[#12A594] text-white' 
-                : 'bg-white/10 text-[#12A594]'
-            }`}>
+            <span
+              className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                isActive
+                  ? "bg-[#12A594] text-white"
+                  : "bg-white/10 text-[#12A594]"
+              }`}
+            >
               {project.category}
             </span>
             <span className="text-gray-400 text-sm">{project.year}</span>
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-          <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+          <h3 className="text-2xl font-bold text-white mb-3">
+            {project.title}
+          </h3>
+          <p className="text-gray-300 leading-relaxed mb-6">
+            {project.description}
+          </p>
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-6">
@@ -153,71 +188,89 @@ const Portfolio: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Mobile App',
-      category: 'Mobile App',
-      type: 'mobile',
-      year: '2023',
-      description: 'A comprehensive e-commerce solution with advanced features including AI-powered recommendations, seamless payment integration, and real-time order tracking.',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Stripe', 'AI/ML'],
-      github: true
+      title: "E-Commerce Mobile App",
+      category: "Mobile App",
+      type: "mobile",
+      year: "2023",
+      description:
+        "A comprehensive e-commerce solution with advanced features including AI-powered recommendations, seamless payment integration, and real-time order tracking.",
+      technologies: ["React Native", "Node.js", "MongoDB", "Stripe", "AI/ML"],
+      github: true,
     },
     {
       id: 2,
-      title: 'Healthcare Management System',
-      category: 'Web Platform',
-      type: 'web',
-      year: '2023',
-      description: 'Complete healthcare management platform with patient records, appointment scheduling, telemedicine capabilities, and integrated billing system.',
-      technologies: ['React', 'Laravel', 'MySQL', 'WebRTC', 'AWS'],
-      github: false
+      title: "Healthcare Management System",
+      category: "Web Platform",
+      type: "web",
+      year: "2023",
+      description:
+        "Complete healthcare management platform with patient records, appointment scheduling, telemedicine capabilities, and integrated billing system.",
+      technologies: ["React", "Laravel", "MySQL", "WebRTC", "AWS"],
+      github: false,
     },
     {
       id: 3,
-      title: 'AR Adventure Game',
-      category: 'Game Development',
-      type: 'game',
-      year: '2022',
-      description: 'Immersive augmented reality adventure game featuring real-world exploration, multiplayer battles, and stunning 3D graphics.',
-      technologies: ['Unity', 'ARCore', 'C#', 'Photon', '3D Modeling'],
-      github: true
+      title: "AR Adventure Game",
+      category: "Game Development",
+      type: "game",
+      year: "2022",
+      description:
+        "Immersive augmented reality adventure game featuring real-world exploration, multiplayer battles, and stunning 3D graphics.",
+      technologies: ["Unity", "ARCore", "C#", "Photon", "3D Modeling"],
+      github: true,
     },
     {
       id: 4,
-      title: 'FinTech Mobile Solution',
-      category: 'Mobile App',
-      type: 'mobile',
-      year: '2023',
-      description: 'Secure financial technology app with cryptocurrency trading, portfolio management, and advanced analytics dashboard.',
-      technologies: ['Flutter', 'Firebase', 'Blockchain', 'Chart.js', 'Biometric Auth'],
-      github: false
+      title: "FinTech Mobile Solution",
+      category: "Mobile App",
+      type: "mobile",
+      year: "2023",
+      description:
+        "Secure financial technology app with cryptocurrency trading, portfolio management, and advanced analytics dashboard.",
+      technologies: [
+        "Flutter",
+        "Firebase",
+        "Blockchain",
+        "Chart.js",
+        "Biometric Auth",
+      ],
+      github: false,
     },
     {
       id: 5,
-      title: 'AI-Powered CRM',
-      category: 'Web Platform',
-      type: 'web',
-      year: '2023',
-      description: 'Intelligent customer relationship management system with predictive analytics, automated workflows, and AI chatbot integration.',
-      technologies: ['Vue.js', 'Python', 'TensorFlow', 'PostgreSQL', 'Docker'],
-      github: true
+      title: "AI-Powered CRM",
+      category: "Web Platform",
+      type: "web",
+      year: "2023",
+      description:
+        "Intelligent customer relationship management system with predictive analytics, automated workflows, and AI chatbot integration.",
+      technologies: ["Vue.js", "Python", "TensorFlow", "PostgreSQL", "Docker"],
+      github: true,
     },
     {
       id: 6,
-      title: 'IoT Smart Home App',
-      category: 'Mobile App',
-      type: 'mobile',
-      year: '2022',
-      description: 'Comprehensive smart home control application with voice commands, automation schedules, and energy monitoring.',
-      technologies: ['React Native', 'IoT', 'MQTT', 'Voice API', 'Real-time DB'],
-      github: true
-    }
+      title: "IoT Smart Home App",
+      category: "Mobile App",
+      type: "mobile",
+      year: "2022",
+      description:
+        "Comprehensive smart home control application with voice commands, automation schedules, and energy monitoring.",
+      technologies: [
+        "React Native",
+        "IoT",
+        "MQTT",
+        "Voice API",
+        "Real-time DB",
+      ],
+      github: true,
+    },
   ];
 
   return (
     <section className="relative py-20 px-6 min-h-screen">
       {/* 3D Background Carousel */}
       <div className="absolute inset-0 z-0 opacity-30">
-        <Portfolio3DCarousel 
+        <Portfolio3DCarousel
           projects={projects}
           activeProject={activeProject}
           setActiveProject={setActiveProject}
@@ -236,7 +289,8 @@ const Portfolio: React.FC = () => {
             Our <span className="text-[#12A594]">Portfolio</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Showcasing innovative solutions that have transformed businesses across industries
+            Showcasing innovative solutions that have transformed businesses
+            across industries
           </p>
         </motion.div>
 
@@ -248,9 +302,9 @@ const Portfolio: React.FC = () => {
                 key={index}
                 onClick={() => setActiveProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeProject === index 
-                    ? 'bg-[#12A594] scale-125' 
-                    : 'bg-white/30 hover:bg-white/50'
+                  activeProject === index
+                    ? "bg-[#12A594] scale-125"
+                    : "bg-white/30 hover:bg-white/50"
                 }`}
               />
             ))}
@@ -282,17 +336,25 @@ const Portfolio: React.FC = () => {
               onClick={() => setActiveProject(index)}
               className={`cursor-pointer backdrop-blur-md rounded-xl p-6 border transition-all duration-300 hover:scale-105 ${
                 activeProject === index
-                  ? 'bg-[#12A594]/20 border-[#12A594]'
-                  : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  ? "bg-[#12A594]/20 border-[#12A594]"
+                  : "bg-white/5 border-white/10 hover:bg-white/10"
               }`}
             >
               <div className="flex items-center gap-3 mb-3">
-                {project.type === 'mobile' ? <Smartphone className="w-5 h-5 text-[#12A594]" /> :
-                 project.type === 'web' ? <Monitor className="w-5 h-5 text-[#12A594]" /> :
-                 <Gamepad className="w-5 h-5 text-[#12A594]" />}
-                <span className="font-semibold text-white">{project.title}</span>
+                {project.type === "mobile" ? (
+                  <Smartphone className="w-5 h-5 text-[#12A594]" />
+                ) : project.type === "web" ? (
+                  <Monitor className="w-5 h-5 text-[#12A594]" />
+                ) : (
+                  <Gamepad className="w-5 h-5 text-[#12A594]" />
+                )}
+                <span className="font-semibold text-white">
+                  {project.title}
+                </span>
               </div>
-              <p className="text-gray-300 text-sm">{project.description.slice(0, 80)}...</p>
+              <p className="text-gray-300 text-sm">
+                {project.description.slice(0, 80)}...
+              </p>
             </motion.div>
           ))}
         </div>

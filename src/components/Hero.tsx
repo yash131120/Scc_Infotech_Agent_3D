@@ -1,10 +1,10 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, Sphere, Stars } from '@react-three/drei';
-import { motion } from 'framer-motion';
-import { ArrowDown, Globe, Smartphone, Code } from 'lucide-react';
-import gsap from 'gsap';
-import * as THREE from 'three';
+import React, { useRef, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float, MeshDistortMaterial, Sphere, Stars } from "@react-three/drei";
+import { motion } from "framer-motion";
+import { ArrowDown, Globe, Smartphone, Code } from "lucide-react";
+import gsap from "gsap";
+import * as THREE from "three";
 
 const FloatingLogo = () => {
   const meshRef = useRef<THREE.Mesh>();
@@ -12,7 +12,8 @@ const FloatingLogo = () => {
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime) * 0.3;
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+      meshRef.current.rotation.x =
+        Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
     }
   });
 
@@ -46,7 +47,7 @@ const AnimatedGlobe = () => {
       <Sphere ref={sphereRef} args={[1, 32, 32]} position={[3, 0, 0]}>
         <MeshDistortMaterial
           color="#12A594"
-          attach="material" 
+          attach="material"
           distort={0.1}
           speed={2}
           roughness={0.2}
@@ -82,33 +83,46 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const tl = gsap.timeline();
-    
-    tl.fromTo('.hero-title', 
+
+    tl.fromTo(
+      ".hero-title",
       { opacity: 0, y: 100 },
       { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
     )
-    .fromTo('.hero-subtitle',
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-      "-=0.8"
-    )
-    .fromTo('.hero-cta',
-      { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
-      "-=0.5"
-    );
+      .fromTo(
+        ".hero-subtitle",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+        "-=0.8"
+      )
+      .fromTo(
+        ".hero-cta",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
+        "-=0.5"
+      );
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={heroRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* 3D Canvas */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
           {/* <ambientLight intensity={0.6} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
           <pointLight position={[-10, -10, -5]} intensity={0.5} color="#12A594" /> */}
-          
-          <Stars radius={300} depth={60} count={3000} factor={7} saturation={0} fade />
+
+          <Stars
+            radius={300}
+            depth={60}
+            count={3000}
+            factor={7}
+            saturation={0}
+            fade
+          />
           {/* <FloatingLogo /> */}
           {/* <AnimatedGlobe /> */}
           {/* <FloatingDevices /> */}
@@ -128,7 +142,7 @@ const Hero: React.FC = () => {
               SCC INFOTECH
             </span>
           </h1>
-          
+
           <p className="hero-subtitle text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Innovating Mobile & Web Solutions Worldwide
           </p>

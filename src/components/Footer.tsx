@@ -1,22 +1,22 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
-import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
-  Github, 
+import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial } from "@react-three/drei";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
   Instagram,
   Facebook,
   ArrowUp,
   Code,
   Smartphone,
-  Globe
-} from 'lucide-react';
-import * as THREE from 'three';
+  Globe,
+} from "lucide-react";
+import * as THREE from "three";
 
 const AnimatedGrid = () => {
   const pointsRef = useRef<THREE.Points>();
@@ -52,86 +52,86 @@ const AnimatedGrid = () => {
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const footerSections = [
     {
-      title: 'Services',
+      title: "Services",
       links: [
-        { name: 'Mobile App Development', href: '#services' },
-        { name: 'Web Development', href: '#services' },
-        { name: 'Game Development', href: '#services' },
-        { name: 'UI/UX Design', href: '#services' },
-        { name: 'Digital Marketing', href: '#services' },
-        { name: 'IT Consulting', href: '#services' },
-      ]
+        { name: "Mobile App Development", href: "#services" },
+        { name: "Web Development", href: "#services" },
+        { name: "Game Development", href: "#services" },
+        { name: "UI/UX Design", href: "#services" },
+        { name: "Digital Marketing", href: "#services" },
+        { name: "IT Consulting", href: "#services" },
+      ],
     },
     {
-      title: 'Company',
+      title: "Company",
       links: [
-        { name: 'About Us', href: '#about' },
-        { name: 'Our Team', href: '#team' },
-        { name: 'Portfolio', href: '#portfolio' },
-        { name: 'Testimonials', href: '#testimonials' },
-        { name: 'Contact', href: '#contact' },
-        { name: 'Career', href: '#career' },
-      ]
+        { name: "About Us", href: "#about" },
+        { name: "Our Team", href: "#team" },
+        { name: "Portfolio", href: "#portfolio" },
+        { name: "Testimonials", href: "#testimonials" },
+        { name: "Contact", href: "#contact" },
+        { name: "Career", href: "#career" },
+      ],
     },
     {
-      title: 'Technologies',
+      title: "Technologies",
       links: [
-        { name: 'React & React Native', href: '#' },
-        { name: 'Flutter & Dart', href: '#' },
-        { name: 'Unity & C#', href: '#' },
-        { name: 'Laravel & PHP', href: '#' },
-        { name: 'Node.js & Express', href: '#' },
-        { name: 'Swift & Kotlin', href: '#' },
-      ]
+        { name: "React & React Native", href: "#" },
+        { name: "Flutter & Dart", href: "#" },
+        { name: "Unity & C#", href: "#" },
+        { name: "Laravel & PHP", href: "#" },
+        { name: "Node.js & Express", href: "#" },
+        { name: "Swift & Kotlin", href: "#" },
+      ],
     },
     {
-      title: 'Resources',
+      title: "Resources",
       links: [
-        { name: 'Blog', href: '#' },
-        { name: 'Case Studies', href: '#' },
-        { name: 'White Papers', href: '#' },
-        { name: 'API Documentation', href: '#' },
-        { name: 'Support Center', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
-      ]
-    }
+        { name: "Blog", href: "#" },
+        { name: "Case Studies", href: "#" },
+        { name: "White Papers", href: "#" },
+        { name: "API Documentation", href: "#" },
+        { name: "Support Center", href: "#" },
+        { name: "Privacy Policy", href: "#" },
+      ],
+    },
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', color: '#0077B5' },
-    { icon: Twitter, href: '#', color: '#1DA1F2' },
-    { icon: Github, href: '#', color: '#333' },
-    { icon: Instagram, href: '#', color: '#E4405F' },
-    { icon: Facebook, href: '#', color: '#1877F2' },
+    { icon: Linkedin, href: "#", color: "#0077B5" },
+    { icon: Twitter, href: "#", color: "#1DA1F2" },
+    { icon: Github, href: "#", color: "#333" },
+    { icon: Instagram, href: "#", color: "#E4405F" },
+    { icon: Facebook, href: "#", color: "#1877F2" },
   ];
 
   const contactInfo = [
     {
       icon: Mail,
-      text: 'hello@sccinfotech.com',
-      href: 'mailto:hello@sccinfotech.com'
+      text: "hello@sccinfotech.com",
+      href: "mailto:hello@sccinfotech.com",
     },
     {
       icon: Phone,
-      text: '+91 (261) 123-4567',
-      href: 'tel:+912611234567'
+      text: "+91 (261) 123-4567",
+      href: "tel:+912611234567",
     },
     {
       icon: MapPin,
-      text: 'Surat, Gujarat, India',
-      href: 'https://maps.google.com/?q=Surat,Gujarat,India'
-    }
+      text: "Surat, Gujarat, India",
+      href: "https://maps.google.com/?q=Surat,Gujarat,India",
+    },
   ];
 
   const stats = [
-    { icon: Code, label: 'Projects Completed', value: '500+' },
-    { icon: Smartphone, label: 'Mobile Apps', value: '200+' },
-    { icon: Globe, label: 'Countries Served', value: '25+' },
+    { icon: Code, label: "Projects Completed", value: "500+" },
+    { icon: Smartphone, label: "Mobile Apps", value: "200+" },
+    { icon: Globe, label: "Countries Served", value: "25+" },
   ];
 
   return (
@@ -172,8 +172,9 @@ const Footer: React.FC = () => {
                   <span className="text-[#12A594]">SCC</span> INFOTECH
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  Innovating mobile and web solutions worldwide. We transform your ideas into 
-                  powerful digital experiences that drive business growth and success.
+                  Innovating mobile and web solutions worldwide. We transform
+                  your ideas into powerful digital experiences that drive
+                  business growth and success.
                 </p>
               </div>
 
@@ -225,7 +226,9 @@ const Footer: React.FC = () => {
                   transition={{ duration: 0.8, delay: sectionIndex * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <h4 className="text-xl font-bold text-white mb-6">{section.title}</h4>
+                  <h4 className="text-xl font-bold text-white mb-6">
+                    {section.title}
+                  </h4>
                   <ul className="space-y-3">
                     {section.links.map((link, linkIndex) => (
                       <motion.li
@@ -262,7 +265,9 @@ const Footer: React.FC = () => {
                 <div className="w-16 h-16 bg-[#12A594]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-[#12A594]" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-white mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
               </div>
             ))}
@@ -278,8 +283,8 @@ const Footer: React.FC = () => {
           >
             <h4 className="text-2xl font-bold text-white mb-4">Stay Updated</h4>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest updates on technology trends, 
-              project insights, and company news.
+              Subscribe to our newsletter for the latest updates on technology
+              trends, project insights, and company news.
             </p>
             <div className="flex max-w-md mx-auto gap-4">
               <input
@@ -303,11 +308,18 @@ const Footer: React.FC = () => {
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-gray-400 text-sm">
-                © 2024 SCC INFOTECH. All rights reserved. | 
-                <a href="#" className="hover:text-[#12A594] transition-colors duration-300 ml-1">
+                © 2024 SCC INFOTECH. All rights reserved. |
+                <a
+                  href="#"
+                  className="hover:text-[#12A594] transition-colors duration-300 ml-1"
+                >
                   Privacy Policy
-                </a> | 
-                <a href="#" className="hover:text-[#12A594] transition-colors duration-300 ml-1">
+                </a>{" "}
+                |
+                <a
+                  href="#"
+                  className="hover:text-[#12A594] transition-colors duration-300 ml-1"
+                >
                   Terms of Service
                 </a>
               </div>
