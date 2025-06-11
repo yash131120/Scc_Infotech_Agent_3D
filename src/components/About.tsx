@@ -15,7 +15,7 @@ const FloatingShape = () => {
       <mesh ref={meshRef}>
         <torusGeometry args={[2, 0.5, 16, 100]} />
         <MeshTransmissionMaterial
-          color="#0d8be0"
+          color="hsl(var(--p))"
           thickness={0.2}
           roughness={0.1}
           transmission={0.9}
@@ -42,13 +42,15 @@ const TimelineItem = ({ year, title, description, delay }: any) => {
       transition={{ duration: 0.8, delay }}
       className="relative pl-8 pb-8"
     >
-      <div className="absolute left-0 top-0 w-4 h-4 bg-[#0d8be0] rounded-full shadow-lg shadow-[#0d8be0]/50"></div>
-      <div className="absolute left-2 top-4 w-0.5 h-full bg-gradient-to-b from-[#0d8be0] to-transparent"></div>
+      <div className="absolute left-0 top-0 w-4 h-4 bg-primary rounded-full shadow-lg shadow-primary/50"></div>
+      <div className="absolute left-2 top-4 w-0.5 h-full bg-gradient-to-b from-primary to-transparent"></div>
 
-      <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-        <div className="text-[#0d8be0] font-bold text-lg mb-2">{year}</div>
-        <h3 className="text-white text-xl font-semibold mb-3">{title}</h3>
-        <p className="text-gray-300 leading-relaxed">{description}</p>
+      <div className="card bg-base-200/50 backdrop-blur-md border border-base-300 hover:bg-base-200/70 transition-all duration-300">
+        <div className="card-body p-6">
+          <div className="text-primary font-bold text-lg mb-2">{year}</div>
+          <h3 className="text-base-content text-xl font-semibold mb-3">{title}</h3>
+          <p className="text-base-content/70 leading-relaxed">{description}</p>
+        </div>
       </div>
     </motion.div>
   );
@@ -116,13 +118,13 @@ const About: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 px-6 min-h-screen flex items-center"
+      className="relative py-20 px-6 min-h-screen flex items-center bg-base-100"
     >
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 opacity-30">
         <Canvas camera={{ position: [0, 0, 5] }}>
           <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={0.8} color="#0d8be0" />
+          <pointLight position={[10, 10, 10]} intensity={0.8} color="hsl(var(--p))" />
           <FloatingShape />
         </Canvas>
       </div>
@@ -137,11 +139,11 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="about-title text-5xl md:text-6xl font-bold text-white mb-6">
-                About <span className="text-[#0d8be0]">Us</span>
+              <h2 className="about-title text-5xl md:text-6xl font-bold text-base-content mb-6">
+                About <span className="text-primary">Us</span>
               </h2>
 
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-base-content/70 text-lg leading-relaxed">
                 <p>
                   SCC INFOTECH specializes in affordable custom mobile
                   development and IT solutions for clients worldwide. We believe
@@ -168,13 +170,13 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center backdrop-blur-md bg-white/5 rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  className="stat bg-base-200/50 backdrop-blur-md border border-base-300 hover:bg-base-200/70 transition-all duration-300"
                 >
-                  <stat.icon className="w-8 h-8 text-[#0d8be0] mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {stat.value}
+                  <div className="stat-figure text-primary">
+                    <stat.icon className="w-8 h-8" />
                   </div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                  <div className="stat-value text-base-content">{stat.value}</div>
+                  <div className="stat-title text-base-content/60">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -182,7 +184,7 @@ const About: React.FC = () => {
 
           {/* Right Column - Timeline */}
           <div className="space-y-2">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+            <h3 className="text-3xl font-bold text-base-content mb-8 text-center">
               Our Journey
             </h3>
             <div className="space-y-6">

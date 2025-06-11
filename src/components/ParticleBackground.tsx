@@ -26,11 +26,11 @@ const ParticleBackground: React.FC = () => {
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
 
-      // Color variations (teal to blue)
+      // Color variations using CSS custom properties (theme colors)
       const colorVariation = Math.random();
-      colors[i * 3] = 0.07 + colorVariation * 0.1; // R
-      colors[i * 3 + 1] = 0.65 + colorVariation * 0.2; // G  
-      colors[i * 3 + 2] = 0.58 + colorVariation * 0.3; // B
+      colors[i * 3] = 0.2 + colorVariation * 0.3; // R
+      colors[i * 3 + 1] = 0.4 + colorVariation * 0.4; // G  
+      colors[i * 3 + 2] = 0.8 + colorVariation * 0.2; // B
     }
 
     const geometry = new THREE.BufferGeometry();

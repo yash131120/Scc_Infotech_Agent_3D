@@ -9,8 +9,6 @@ import {
   Gamepad2,
   Code,
   Megaphone,
-  Database,
-  Zap,
 } from "lucide-react";
 import * as THREE from "three";
 
@@ -51,10 +49,10 @@ const ServiceCube = ({
         onClick={onClick}
       >
         <meshStandardMaterial
-          color={isActive ? "#0d8be0" : color}
+          color={isActive ? "hsl(var(--p))" : color}
           transparent
           opacity={isActive ? 0.9 : 0.7}
-          emissive={isActive ? "#0d8be0" : "#000000"}
+          emissive={isActive ? "hsl(var(--p))" : "#000000"}
           emissiveIntensity={isActive ? 0.3 : 0}
         />
       </RoundedBox>
@@ -85,40 +83,42 @@ const ServiceCard = ({ service, index, isActive, onClick }: any) => {
       onClick={() => onClick(service.id)}
     >
       <div
-        className={`backdrop-blur-md rounded-2xl p-8 border transition-all duration-300 ${
+        className={`card backdrop-blur-md border transition-all duration-300 ${
           isActive
-            ? "bg-[#0d8be0]/20 border-[#0d8be0] shadow-2xl shadow-[#0d8be0]/25"
-            : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
+            ? "bg-primary/20 border-primary shadow-2xl shadow-primary/25"
+            : "bg-base-200/50 border-base-300 hover:bg-base-200/70 hover:border-base-300"
         }`}
       >
-        <div
-          className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
-            isActive
-              ? "bg-[#0d8be0] shadow-lg shadow-[#0d8be0]/50"
-              : "bg-white/10"
-          }`}
-        >
-          <service.icon
-            className={`w-8 h-8 ${isActive ? "text-white" : "text-[#0d8be0]"}`}
-          />
-        </div>
+        <div className="card-body p-8">
+          <div
+            className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+              isActive
+                ? "bg-primary shadow-lg shadow-primary/50"
+                : "bg-base-300"
+            }`}
+          >
+            <service.icon
+              className={`w-8 h-8 ${isActive ? "text-primary-content" : "text-primary"}`}
+            />
+          </div>
 
-        <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-        <p className="text-gray-300 leading-relaxed mb-6">
-          {service.description}
-        </p>
+          <h3 className="card-title text-base-content mb-4">{service.title}</h3>
+          <p className="text-base-content/70 leading-relaxed mb-6">
+            {service.description}
+          </p>
 
-        <div className="space-y-2">
-          {service.features.map((feature: string, idx: number) => (
-            <div key={idx} className="flex items-center gap-3">
-              <div
-                className={`w-2 h-2 rounded-full ${
-                  isActive ? "bg-[#0d8be0]" : "bg-white/40"
-                }`}
-              ></div>
-              <span className="text-gray-300 text-sm">{feature}</span>
-            </div>
-          ))}
+          <div className="space-y-2">
+            {service.features.map((feature: string, idx: number) => (
+              <div key={idx} className="flex items-center gap-3">
+                <div
+                  className={`w-2 h-2 rounded-full ${
+                    isActive ? "bg-primary" : "bg-base-content/40"
+                  }`}
+                ></div>
+                <span className="text-base-content/70 text-sm">{feature}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -142,7 +142,7 @@ const Services: React.FC = () => {
         "Flutter",
         "Swift & Kotlin",
       ],
-      color: "#3B82F6",
+      color: "hsl(var(--s))",
     },
     {
       id: 1,
@@ -157,7 +157,7 @@ const Services: React.FC = () => {
         "Progressive Web Apps",
         "E-commerce Solutions",
       ],
-      color: "#10B981",
+      color: "hsl(var(--a))",
     },
     {
       id: 2,
@@ -172,7 +172,7 @@ const Services: React.FC = () => {
         "Digital Graphics",
         "3D Visualization",
       ],
-      color: "#F59E0B",
+      color: "hsl(var(--in))",
     },
     {
       id: 3,
@@ -187,7 +187,7 @@ const Services: React.FC = () => {
         "AR/VR Games",
         "Cross-platform",
       ],
-      color: "#8B5CF6",
+      color: "hsl(var(--su))",
     },
     {
       id: 4,
@@ -202,7 +202,7 @@ const Services: React.FC = () => {
         "DevOps",
         "System Integration",
       ],
-      color: "#EF4444",
+      color: "hsl(var(--er))",
     },
     {
       id: 5,
@@ -217,21 +217,21 @@ const Services: React.FC = () => {
         "PPC Campaigns",
         "Analytics",
       ],
-      color: "#06B6D4",
+      color: "hsl(var(--wa))",
     },
   ];
 
   return (
-    <section className="relative py-20 px-6 min-h-screen">
+    <section className="relative py-20 px-6 min-h-screen bg-base-100">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 opacity-40">
         <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
           <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#0d8be0" />
+          <pointLight position={[10, 10, 10]} intensity={1} color="hsl(var(--p))" />
           <pointLight
             position={[-10, -10, 10]}
             intensity={0.5}
-            color="#3B82F6"
+            color="hsl(var(--s))"
           />
 
           {services.map((service, index) => (
@@ -260,10 +260,10 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Our <span className="text-[#0d8be0]">Services</span>
+          <h2 className="text-5xl md:text-6xl font-bold text-base-content mb-6">
+            Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-base-content/70 max-w-3xl mx-auto">
             Comprehensive IT solutions tailored to transform your business
             vision into reality
           </p>
@@ -291,7 +291,7 @@ const Services: React.FC = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <h3 className="text-3xl font-bold text-white mb-8">
+          <h3 className="text-3xl font-bold text-base-content mb-8">
             Technologies We Master
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
@@ -313,7 +313,7 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white hover:bg-[#0d8be0]/20 hover:border-[#0d8be0] transition-all duration-300"
+                className="badge badge-primary badge-lg p-4 hover:badge-secondary transition-all duration-300"
               >
                 {tech}
               </motion.span>
