@@ -160,7 +160,7 @@ const ProjectCard = ({ project, index, isActive, onClick }: any) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-[#0d8be0] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#0f8a7a] transition-colors"
+              className="flex items-center gap-2 bg-[#0d8be0] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[ #08aae4] transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
               View Project

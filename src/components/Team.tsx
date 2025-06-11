@@ -165,7 +165,7 @@ const TeamCard = ({ member, index, isActive, onClick }: any) => {
               whileHover={{ scale: 1.2, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
               href={`mailto:${member.email}`}
-              className="w-10 h-10 bg-[#0d8be0] rounded-full flex items-center justify-center hover:bg-[#0f8a7a] transition-colors"
+              className="w-10 h-10 bg-[#0d8be0] rounded-full flex items-center justify-center hover:bg-[ #08aae4] transition-colors"
             >
               <Mail className="w-5 h-5 text-white" />
             </motion.a>
