@@ -83,9 +83,9 @@ const Waveform: React.FC<WaveformProps> = ({ isActive, amplitude }) => {
 const GlowingRing: React.FC = () => {
   const ringGroupRef = useRef<THREE.Group>(null);
   const ring1Ref = useRef<THREE.Mesh>(null);
-  const ring2Ref = useRef<THREE.Mesh>(null);
-  const ring3Ref = useRef<THREE.Mesh>(null);
-  const ring4Ref = useRef<THREE.Mesh>(null);
+  // const ring2Ref = useRef<THREE.Mesh>(null);
+  // const ring3Ref = useRef<THREE.Mesh>(null);
+  // const ring4Ref = useRef<THREE.Mesh>(null);
   
   const vapi = useRef<Vapi | null>(null);
   const [statusText, setStatusText] = useState('Click to talk to me');
@@ -162,23 +162,23 @@ const GlowingRing: React.FC = () => {
         ring1Ref.current.rotation.z = Math.cos(time * 0.3) * 0.05;
       }
       
-      if (ring2Ref.current) {
-        ring2Ref.current.rotation.x = Math.cos(time * 0.7) * 0.15;
-        ring2Ref.current.rotation.y -= 0.008;
-        ring2Ref.current.rotation.z = Math.sin(time * 0.4) * 0.08;
-      }
+      // if (ring2Ref.current) {
+      //   ring2Ref.current.rotation.x = Math.cos(time * 0.7) * 0.15;
+      //   ring2Ref.current.rotation.y -= 0.008;
+      //   ring2Ref.current.rotation.z = Math.sin(time * 0.4) * 0.08;
+      // }
       
-      if (ring3Ref.current) {
-        ring3Ref.current.rotation.x = Math.sin(time * 0.6) * 0.12;
-        ring3Ref.current.rotation.y += 0.012;
-        ring3Ref.current.rotation.z = Math.cos(time * 0.5) * 0.06;
-      }
+      // if (ring3Ref.current) {
+      //   ring3Ref.current.rotation.x = Math.sin(time * 0.6) * 0.12;
+      //   ring3Ref.current.rotation.y += 0.012;
+      //   ring3Ref.current.rotation.z = Math.cos(time * 0.5) * 0.06;
+      // }
       
-      if (ring4Ref.current) {
-        ring4Ref.current.rotation.x = Math.cos(time * 0.4) * 0.08;
-        ring4Ref.current.rotation.y -= 0.015;
-        ring4Ref.current.rotation.z = Math.sin(time * 0.6) * 0.1;
-      }
+      // if (ring4Ref.current) {
+      //   ring4Ref.current.rotation.x = Math.cos(time * 0.4) * 0.08;
+      //   ring4Ref.current.rotation.y -= 0.015;
+      //   ring4Ref.current.rotation.z = Math.sin(time * 0.6) * 0.1;
+      // }
     }
     
     // Update waveform amplitude based on speaking state
@@ -217,7 +217,7 @@ const GlowingRing: React.FC = () => {
           />
         </mesh>
 
-        {/* Ring 2 - Purple */}
+        {/* Ring 2 - Purple 
         <mesh ref={ring2Ref}>
           <torusGeometry args={[1.8, 0.08, 16, 100]} />
           <MeshWobbleMaterial 
@@ -231,9 +231,9 @@ const GlowingRing: React.FC = () => {
             transparent
             opacity={0.8}
           />
-        </mesh>
+        </mesh> */}
 
-        {/* Ring 3 - Green */}
+        {/* Ring 3 - Green
         <mesh ref={ring3Ref}>
           <torusGeometry args={[1.4, 0.05, 16, 100]} />
           <MeshWobbleMaterial 
@@ -247,9 +247,9 @@ const GlowingRing: React.FC = () => {
             transparent
             opacity={0.85}
           />
-        </mesh>
+        </mesh> */}
 
-        {/* Ring 4 - Innermost - Cyan */}
+        {/* Ring 4 - Innermost - Cyan 
         <mesh ref={ring4Ref}>
           <torusGeometry args={[1.0, 0.04, 16, 100]} />
           <MeshWobbleMaterial 
@@ -263,7 +263,7 @@ const GlowingRing: React.FC = () => {
             transparent
             opacity={0.9}
           />
-        </mesh>
+        </mesh> */}
 
         {/* Waveform - Only visible when speaking */}
         <Waveform isActive={isSpeaking} amplitude={waveformAmplitude} />
